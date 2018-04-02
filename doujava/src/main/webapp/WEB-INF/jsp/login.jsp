@@ -18,13 +18,13 @@
 		<div class="dologo"></div>
 		<form action="${pageContext.request.contextPath}/login" method="post">
 			<ul>
-				<li class="inpLi"><b>用户名：</b><input type="text" name="user_name" class="inpLogin"></li>
+				<li class="inpLi"><b>用户名：</b><input type="text" name="userName" class="inpLogin"></li>
 				<li class="inpLi"><b>密码：</b><input type="password" name="password" class="inpLogin"></li>
 				<li class="captchaPic">
 					<div class="inpLi">
 						<b>验证码：</b><input type="text" name="captcha" class="captcha">
 					</div>
-					<img id="vcode" src="../captcha.php" alt="启用验证码" border="1" onClick="refreshimage()" title="看不清？点击更换另一个验证码。">
+					<img id="vcode" src="${pageContext.request.contextPath}/login/captcha" alt="验证码" onClick="refreshimage()" title="看不清？点击更换另一个验证码。">
 				</li>
 				<li class="sub">
 					<input type="submit" name="submit" class="btn" value="登录">

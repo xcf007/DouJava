@@ -66,10 +66,11 @@
 		</dependency>
 		
 		<dependency>
-		    <groupId>com.octo.captcha</groupId>
-		    <artifactId>jcaptcha</artifactId>
-		    <version>1.0</version>
-		</dependency>		
+		    <groupId>com.google.code.kaptcha</groupId>
+		    <artifactId>kaptcha</artifactId>
+		    <version>2.3</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>doujava</finalName>
@@ -91,6 +92,10 @@
 			<id>aliyunmaven</id>
 			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
 		</repository>
+		<repository>
+			<id>jahia</id>
+			<url>http://maven.jahia.org/maven2/</url>
+		</repository>		
 	</repositories>
 	<properties>
 		<spring.version>4.3.14.RELEASE</spring.version>

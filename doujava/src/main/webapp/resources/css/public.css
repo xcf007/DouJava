@@ -1072,7 +1072,7 @@ select {
  width: 280px;
 }
 #login .inpLi .captcha {
- width: 198px;
+ width: 158px;
  text-transform: uppercase;
 }
 #login .captchaPic {
@@ -1080,7 +1080,7 @@ select {
 }
 #login .captchaPic .inpLi {
  float: left;
- width: 288px;
+ width: 258px;
 }
 #login .captchaPic #vcode {
  float: right;
@@ -1143,7 +1143,7 @@ select {
 }
 /*- outMsg -*/
 #outMsg {
- background: url(../images/icon_exc.gif) no-repeat left top;
+ background: url(../images/icon_exc.gif) no-repeat left 30px;
  margin: 0px auto;
  width: 340px;
  padding: 30px 0 0 80px;
