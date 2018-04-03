@@ -1283,7 +1283,7 @@ select {
  font-size: 0;
  margin-left: 180px;
 }
-#footer ul {
+#footer .copyright {
  text-align: center;
  padding: 15px 0;
 }

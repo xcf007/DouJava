@@ -6,8 +6,15 @@
 	<resultMap type="cn.xcf007.doujava.admin.entity.User" id="UserResult">
 		<result property="id" column="user_id" />
 		<result property="userName" column="user_name" />
+		<result property="email" column="email" />
 		<result property="password" column="password" />
+		<result property="addTime" column="add_time" />
+		<result property="lastLogin" column="last_login" />
 	</resultMap>
+	
+	<sql id="user_columns">
+        user_id,user_name,email,password,add_time,last_login
+    </sql>
 
 	<select id="login" parameterType="cn.xcf007.doujava.admin.entity.User" resultMap="UserResult">
 		select user_id,user_name,password 
@@ -15,4 +22,11 @@
 		where user_name=#{userName} and password=#{password} 
 		limit 1
 	</select>
+	
+	<select id="list" resultMap="UserResult">
+        SELECT
+        <include refid="user_columns"/>
+        FROM dou_admin
+        ORDER BY user_id ASC
+    </select>	
 </mapper> 
