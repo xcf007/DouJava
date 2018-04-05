@@ -13,7 +13,7 @@
 	</resultMap>
 	
 	<sql id="user_columns">
-        user_id,user_name,email,password,add_time,last_login
+        user_id,user_name,email,password,FROM_UNIXTIME(add_time) "add_time",FROM_UNIXTIME(last_login) "last_login"
     </sql>
 
 	<select id="login" parameterType="cn.xcf007.doujava.admin.entity.User" resultMap="UserResult">
