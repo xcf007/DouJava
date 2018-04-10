@@ -8,8 +8,9 @@
 		<result property="userName" column="user_name" />
 		<result property="email" column="email" />
 		<result property="password" column="password" />
-		<result property="addTime" column="add_time" />
-		<result property="lastLogin" column="last_login" />
+		<result property="addTime" column="add_time" javaType="java.util.Date" jdbcType="INTEGER" />
+		<result property="lastLogin" column="last_login"  javaType="java.util.Date" jdbcType="INTEGER" />
+        <result property="actionList" column="action_list" />
 	</resultMap>
 	
 	<sql id="user_columns">
@@ -28,5 +29,50 @@
         <include refid="user_columns"/>
         FROM dou_admin
         ORDER BY user_id ASC
-    </select>	
+    </select>
+
+    <!--插入管理信息-->
+    <insert id="add" parameterType="cn.xcf007.doujava.admin.entity.User" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO dou_admin
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userName != null">
+                user_name,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+            <if test="addTime != null">
+                add_time,
+            </if>
+            <if test="lastLogin != null">
+                last_login,
+            </if>
+            <if test="actionList != null">
+                action_list,
+            </if>
+        </trim>
+        <trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            <if test="userName != null">
+                #{userName, jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password, jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email, jdbcType=VARCHAR},
+            </if>
+            <if test="addTime != null">
+                #{addTime, jdbcType=INTEGER},
+            </if>
+            <if test="lastLogin != null">
+                #{lastLogin, jdbcType=INTEGER},
+            </if>
+            <if test="actionList != null">
+                #{actionList, jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
 </mapper> 

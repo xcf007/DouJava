@@ -50,6 +50,7 @@ public class UserController {
 		        if (resultUser == null) {
 		        	session.removeAttribute(Constants.KAPTCHA_SESSION_KEY);
 					ModelAndView mv = new ModelAndView("/msg");
+					mv.addObject("out", "out");
 					mv.addObject("msgTitle","用户不存在或密码错误！");
 					mv.addObject("skipText","将在 3 秒后跳转到上一个链接地址!");
 					mv.addObject("url",request.getRequestURI());	            
@@ -61,6 +62,7 @@ public class UserController {
 		        }			
 			}else{
 				ModelAndView mv = new ModelAndView("/msg");
+				mv.addObject("out", "out");
 				mv.addObject("msgTitle","您输入的验证码不正确!");
 				mv.addObject("skipText","将在 3 秒后跳转到上一个链接地址!");
 				mv.addObject("url",request.getRequestURI());

@@ -1116,7 +1116,7 @@ select {
 ----------------------------------------------- */
 /*- douMsg -*/
 #douMsg {
- background: url(../images/icon_exc_small.gif) no-repeat left top;
+ background: url(../images/icon_exc_small.gif) no-repeat left 30px;
  padding: 27px 0 0 70px;
  margin-top: 30px;
 }

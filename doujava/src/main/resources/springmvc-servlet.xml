@@ -16,6 +16,11 @@
 		<property name="configLocation" value="classpath:mybatis-config.xml" />
 		<!-- 自动扫描mappers.xml文件 -->
 		<property name="mapperLocations" value="classpath:/mappers/*.xml"></property>
+		<property name="typeHandlers">
+			<array>
+				<bean name="dateIntTypeHandler" class="cn.xcf007.doujava.util.DateIntTypeHandler" />
+			</array>
+		</property>
 	</bean>
 
 	<!-- 数据源 -->
