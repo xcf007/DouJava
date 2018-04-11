@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import cn.xcf007.doujava.admin.entity.User;
 import cn.xcf007.doujava.admin.service.UserService;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -94,4 +95,12 @@ public class ManagerController {
         mv.addObject("msgTitle", "填加管理员成功!");
         return mv;
     }
+
+    @GetMapping("/manager/edit/{id}")
+    public String editPage(@PathVariable("id") Integer userId, HttpServletRequest request) {
+        request.setAttribute("action", "edit");
+        request.setAttribute("actionLink", new ActionLink("返回列表", request.getContextPath() + "/manager"));
+        return "manager";
+    }
+
 }

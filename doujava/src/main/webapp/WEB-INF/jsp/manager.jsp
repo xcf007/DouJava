@@ -80,6 +80,49 @@
                     </table>
                 </form>
             </c:if>
+            <c:if test="${action eq 'edit'}">
+                <!-- 管理员编辑 -->
+                <form action="${pageContext.request.contextPath}/manager/edit" method="post">
+                    <table width="100%" border="0" cellpadding="8" cellspacing="0" class="tableBasic">
+                        <tr>
+                            <td width="100" align="right">管理员名称</td>
+                            <td>
+                                <input type="text" name="userName" size="40" class="inpMain"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100" align="right">E-mail地址</td>
+                            <td>
+                                <input type="text" name="email" size="40" class="inpMain"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">旧密码</td>
+                            <td>
+                                <input type="password" name="old_password" size="40" class="inpMain" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">密码</td>
+                            <td>
+                                <input type="password" name="password" size="40" class="inpMain"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">确认密码</td>
+                            <td>
+                                <input type="password" name="confirmPassword" size="40" class="inpMain"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <input type="submit" name="submit" class="btn" value="提交"/>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </c:if>
         </div>
     </div>
     <%@ include file="footer.jsp" %>
